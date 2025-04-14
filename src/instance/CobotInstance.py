@@ -48,14 +48,17 @@ class CobotInstance:
         else:
             print("Not connected to the robot")
     
-    def tilt(self, current_pose, angle, sleep=0):
+    def tilt(self, current_pose, sleep=0):
+        tilt_pose = [-3.622, -1.747, 1.427, -1.451, -1.486, -0.465]
         # angle must be in radians
         if self.connected:
-            current_pose[3] += angle
-            self.movel(current_pose, sleep)
+            # self.setSpeed(0.2)
+            # self.setAcceleration(0.2)
+            self.movej(tilt_pose, sleep)
             # Return to horizontal position after tilting
-            current_pose[3] -= angle
-            self.movel(current_pose, sleep)
+            self.movej(current_pose, sleep)
+            # self.setSpeed(0.5)
+            # self.setAcceleration(0.5)
         else:
             print("Not connected to the robot")
 

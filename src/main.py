@@ -8,7 +8,7 @@ def main():
     robot.connect()
     gripper = Robotiq_Two_Finger_Gripper(robot.robot)
     gripper.open_gripper()
-    sleep(5)
+    sleep(2)
     robot.setSpeed(2)
     robot.setAcceleration(2)
     robot.start()
