@@ -2,7 +2,7 @@ import time
 import socket
 import urx
 
-startingPoint = [-4.700810496007101, -3.1229621372618617, 2.717733685170309, -4.326068302194113, -1.6716540495501917, -0.3389657179461878]
+startingPoint = [-4.6887, -1.1634, 2.1585, -1.1679, 0.0117, 0.2661]
 
 HOST = "192.168.0.16"
 PORT = 30002
@@ -70,6 +70,7 @@ class CobotInstance:
 
     def start(self):
         if self.connected:
+            print("starting")
             self.movej(startingPoint, sleep=5)
         else:
             print("Not connected to the robot")
